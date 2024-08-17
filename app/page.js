@@ -170,9 +170,7 @@ export default function Home() {
       <p className="text-sm text-gray-500 lowercase font-normal mt-4">
         {walletAddress ? (
           <>
-            {`Connected: ${walletAddress.slice(0, 6)}...${walletAddress.slice(
-              -4
-            )}`}
+            {`Connected: ${walletAddress}`}
             <div className="flex flex-col items-center justify-center">
               <button
                 onClick={clearWalletAddress}
