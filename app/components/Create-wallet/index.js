@@ -4,18 +4,19 @@ import React, { useState } from "react";
 const CreateWalletModal = ({ onSubmit, onClose }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");  
   const [ic, setIc] = useState("");
   const [walletName, setWalletName] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit({ name, email, ic, walletName });
+    onSubmit({ name, email, phone, ic, walletName });
   };
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center backdrop-blur-md">
       <div className="bg-white p-8 rounded-lg shadow-lg lg:w-96 w-3/4">
-        <h2 className="text-2xl font-bold mb-8">Create Wallet</h2>
+        <h2 className="text-2xl font-bold mb-8">Create DIC</h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <label htmlFor="name" className="block mb-2">
@@ -39,6 +40,19 @@ const CreateWalletModal = ({ onSubmit, onClose }) => {
               id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              className="w-full px-3 py-2 border rounded-md"
+              required
+            />
+          </div>
+          <div className="mb-4">
+            <label htmlFor="phone" className="block mb-2">
+              Phone Number
+            </label>
+            <input
+              type="phone"
+              id="phone"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
               className="w-full px-3 py-2 border rounded-md"
               required
             />

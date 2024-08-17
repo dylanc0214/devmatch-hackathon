@@ -5,7 +5,7 @@ import Header from "./components/Header";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "DIC",
+  title: "Digital Identity Card",
   description: "Template by LengzaiBen",
 };
 
