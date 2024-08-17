@@ -10,7 +10,7 @@ const MintTokenModal = ({ onSubmit, onClose }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit({ walletAddress, to, amount, contractAddress, fallbackUrl });
+    onSubmit({ walletAddress, to, contractAddress, file, name, description, callbackUrl });
   };
 
   return (
