@@ -98,7 +98,7 @@ const Header = () => {
                 .slice(-4)}`}
             </span>
           ) : (
-            "Create Wallet"
+            "Create DIC"
           )}
         </button>
       </div>
