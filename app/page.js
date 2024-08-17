@@ -69,7 +69,7 @@ export default function Home() {
 
       toast.success(
         `🦄 Minted token successfully!
-        Wallet address: ${walletAddress}`,
+        DIC address: ${walletAddress}`,
         {
           position: "bottom-center",
           autoClose: 5000,
@@ -127,12 +127,12 @@ export default function Home() {
       // sessionStorage.setItem("walletAddress", walletAddress);
 
       if (!walletAddress) {
-        throw new Error("Wallet address not found in the response");
+        throw new Error("DIC address not found in the response");
       }
 
       toast.success(
         `🦄 Token transfered successfully!
-        Wallet address: ${walletAddress}`,
+        DIC address: ${walletAddress}`,
         {
           position: "bottom-center",
           autoClose: 5000,
@@ -196,7 +196,7 @@ export default function Home() {
             </div>
           </>
         ) : (
-          "Create Wallet to Get Started"
+          "Create DIC to Get Started"
         )}
       </p>
       <AnimatePresence>
