@@ -1,26 +1,28 @@
 "use client";
 import React, { useState } from "react";
 
-const TransferTokenModal = ({ onSubmit, onClose }) => {
+const MintTokenModal = ({ onSubmit, onClose }) => {
   const [walletAddress, setWalletAddress] = useState("");
   const [to, setTo] = useState("");
-  const [amount, setAmount] = useState("");
-  const contractAddress = "0x6F8aEff8094d815FA87a18E5D6Dd1590a7ac7374";
-  const fallbackUrl = "https://maschainworkshop.vercel.app/";
+  const [name, setName] = useState("");
+  const [description, setDescription] = useState("");
+  const [file, setFile] = useState<File>();  
+  const contractAddress = "0xecaf61C6461C14Dd1104a6C7EfC3de0D211c2093";
+  const callbackUrl = "https://devmatch-hackathon.vercel.app/";
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit({ walletAddress, to, amount, contractAddress, fallbackUrl });
+    onSubmit({ walletAddress, to, name, description, file, contractAddress, callbackUrl });
   };
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center backdrop-blur-md">
       <div className="bg-white p-8 rounded-lg shadow-lg lg:w-96 w-3/4">
-        <h2 className="text-2xl font-bold mb-8">Transfer Token</h2>
+        <h2 className="text-2xl font-bold mb-8">Apply for Halal</h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <label htmlFor="walletAddress" className="block mb-2">
-              Wallet Address
+              DIC Address
             </label>
             <input
               type="text"
@@ -33,10 +35,10 @@ const TransferTokenModal = ({ onSubmit, onClose }) => {
           </div>
           <div className="mb-4">
             <label htmlFor="to" className="block mb-2">
-              Recipient Address
+              Government Address
             </label>
             <input
-              type="email"
+              type="text"
               id="to"
               value={to}
               onChange={(e) => setTo(e.target.value)}
@@ -45,14 +47,39 @@ const TransferTokenModal = ({ onSubmit, onClose }) => {
             />
           </div>
           <div className="mb-4">
-            <label htmlFor="amount" className="block mb-2">
-              Amount
+            <label htmlFor="name" className="block mb-2">
+              Name
             </label>
             <input
               type="text"
-              id="amount"
-              value={amount}
-              onChange={(e) => setAmount(e.target.value)}
+              id="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              className="w-full px-3 py-2 border rounded-md"
+              required
+            />
+          </div>
+          <div className="mb-4">
+            <label htmlFor="description" className="block mb-2">
+              Description
+            </label>
+            <input
+              type="text"
+              id="description"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              className="w-full px-3 py-2 border rounded-md"
+              required
+            />
+          </div>
+          <div className="mb-4">
+            <label htmlFor="file" className="block mb-2">
+              File
+            </label>
+            <input
+              type="file"
+              id="file"
+              onChange={(e) => setFile(e.target.files[0])}
               className="w-full px-3 py-2 border rounded-md"
               required
             />
@@ -70,13 +97,13 @@ const TransferTokenModal = ({ onSubmit, onClose }) => {
             />
           </div>
           <div className="mb-4 hidden">
-            <label htmlFor="fallbackUrl" className="block mb-2">
-              Fallback URL
+            <label htmlFor="callbackUrl" className="block mb-2">
+              Callback URL
             </label>
             <input
               type="text"
-              id="fallbackUrl"
-              value={fallbackUrl}
+              id="callbackUrl"
+              value={callbackUrl}
               className="w-full px-3 py-2 border rounded-md"
               required
             />
@@ -93,7 +120,7 @@ const TransferTokenModal = ({ onSubmit, onClose }) => {
               type="submit"
               className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
             >
-              Transfer
+              Apply
             </button>
           </div>
         </form>
@@ -102,4 +129,4 @@ const TransferTokenModal = ({ onSubmit, onClose }) => {
   );
 };
 
-export default TransferTokenModal;
+export default MintTokenModal;

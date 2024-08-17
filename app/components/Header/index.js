@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import CreateWalletModal from "../Create-wallet";
+import CreateWalletModal from "../Create-DIC";
 import { motion, AnimatePresence } from "framer-motion";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";

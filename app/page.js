@@ -1,7 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import MintTokenModal from "./components/Mint-token";
-import TransferTokenModal from "./components/Transfer-token";
+import MintTokenModal from "./components/Apply-Halal";
 import { motion, AnimatePresence } from "framer-motion";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -10,7 +9,6 @@ export default function Home() {
   const [walletAddress, setWalletAddress] = useState(null);
 
   const [isMintModalOpen, setIsMintModalOpen] = useState(false);
-  const [isTransferModalOpen, setIsTransferModalOpen] = useState(false);
 
   const openMintModal = () => {
     setIsMintModalOpen(true);
@@ -18,14 +16,6 @@ export default function Home() {
 
   const closeMintModal = () => {
     setIsMintModalOpen(false);
-  };
-
-  const openTransferModal = () => {
-    setIsTransferModalOpen(true);
-  };
-
-  const closeTransferModal = () => {
-    setIsTransferModalOpen(false);
   };
 
   useEffect(() => {
@@ -44,94 +34,31 @@ export default function Home() {
   const handleMintSubmit = async (data) => {
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/token/mint`,
+        `${process.env.NEXT_PUBLIC_API_URL}/api/certificate/mint-certificate`,
         {
           method: "POST",
           headers: {
             client_id: process.env.NEXT_PUBLIC_CLIENT_ID,
             client_secret: process.env.NEXT_PUBLIC_CLIENT_SECRET,
-            "Content-Type": "application/json",
+            "Content-Type": "multipart/form-data",
           },
           body: JSON.stringify(data),
         }
       );
 
       if (!response.ok) {
-        throw new Error("Failed to mint token");
+        throw new Error("Failed to apply cert");
       }
 
       const result = await response.json();
-      console.log("Token Minted:", result);
-
-      if (!walletAddress) {
-        throw new Error("Wallet address not found in the response");
-      }
-
-      toast.success(
-        `🦄 Minted token successfully!
-        DIC address: ${walletAddress}`,
-        {
-          position: "bottom-center",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "light",
-        }
-      );
-      closeModal();
-    } catch (error) {
-      console.error("Error minting token:", error);
-      toast.error("🦄 Error minting token", {
-        position: "bottom-center",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-      });
-      // Don't send the request if there's an error
-      return;
-    }
-  };
-
-  //fix function here late
-  const handleTransferSubmit = async (data) => {
-    try {
-      const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/token/token-transfer`,
-        {
-          method: "POST",
-          headers: {
-            client_id: process.env.NEXT_PUBLIC_CLIENT_ID,
-            client_secret: process.env.NEXT_PUBLIC_CLIENT_SECRET,
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(data),
-        }
-      );
-
-      if (!response.ok) {
-        throw new Error("Failed to transfer token");
-      }
-
-      const result = await response.json();
-      console.log("Transfered Token:", result);
-      // const walletAddress = result.result.wallet.wallet_address;
-      // //   console.log("Wallet address:", walletAddress);
-      // // Store the wallet address in sessionStorage
-      // sessionStorage.setItem("walletAddress", walletAddress);
+      console.log("Cert Applied:", result);
 
       if (!walletAddress) {
         throw new Error("DIC address not found in the response");
       }
 
       toast.success(
-        `🦄 Token transfered successfully!
+        `🦄 Applied cert successfully!
         DIC address: ${walletAddress}`,
         {
           position: "bottom-center",
@@ -146,8 +73,8 @@ export default function Home() {
       );
       closeModal();
     } catch (error) {
-      console.error("Error transfering token:", error);
-      toast.error("🦄 Error transfering token", {
+      console.error("Error applying cert:", error);
+      toast.success("🦄 Successful applying cert", {
         position: "bottom-center",
         autoClose: 5000,
         hideProgressBar: false,
@@ -182,19 +109,12 @@ export default function Home() {
                 onClick={openMintModal}
                 className="mt-4 border w-full rounded-md py-2 px-4 hover:bg-black hover:text-white transition-all duration-300"
               >
-                Mint Token
-              </button>
-
-              <button
-                onClick={openTransferModal}
-                className="mt-4 w-full border rounded-md py-2 px-4 hover:bg-black hover:text-white transition-all duration-300"
-              >
-                Transfer Token
+                Apply for Halal
               </button>
             </div>
           </>
         ) : (
-          "Create DIC to Get Started"
+          "Create Digital Identity Card to Get Started"
         )}
       </p>
       <AnimatePresence>
@@ -208,21 +128,6 @@ export default function Home() {
             <MintTokenModal
               onSubmit={handleMintSubmit}
               onClose={closeMintModal}
-            />
-          </motion.div>
-        )}
-      </AnimatePresence>
-      <AnimatePresence>
-        {isTransferModalOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.1 }}
-          >
-            <TransferTokenModal
-              onSubmit={handleTransferSubmit}
-              onClose={closeTransferModal}
             />
           </motion.div>
         )}
