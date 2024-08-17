@@ -174,20 +174,20 @@ export default function Home() {
             <div className="flex flex-col items-center justify-center">
               <button
                 onClick={clearWalletAddress}
-                className="w-full mt-4 border rounded-md py-2 px-2 hover:bg-black hover:text-white transition-all duration-300"
+                className="w-full mt-4 border rounded-md py-2 px-3 hover:bg-black hover:text-white transition-all duration-300"
               >
                 Disconnect DIC
               </button>
               <button
                 onClick={openMintModal}
-                className="mt-4 border w-full rounded-md py-2 px-2 hover:bg-black hover:text-white transition-all duration-300"
+                className="mt-4 border w-full rounded-md py-2 px-3 hover:bg-black hover:text-white transition-all duration-300"
               >
                 Mint Token
               </button>
 
               <button
                 onClick={openTransferModal}
-                className="mt-4 w-full border rounded-md py-2 px-2 hover:bg-black hover:text-white transition-all duration-300"
+                className="mt-4 w-full border rounded-md py-2 px-3 hover:bg-black hover:text-white transition-all duration-300"
               >
                 Transfer Token
               </button>
