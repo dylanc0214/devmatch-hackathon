@@ -48,7 +48,7 @@ const Header = () => {
 
       toast.success(
         `🦄 User created successfully!
-        Wallet address: ${walletAddress}`,
+        DIC address: ${walletAddress}`,
         {
           position: "bottom-center",
           autoClose: 5000,
@@ -82,7 +82,7 @@ const Header = () => {
     <header className="w-full py-6 lg:py-4 relative border-b">
       <div className="container mx-auto px-8 lg:px-4 flex items-center justify-between">
         <div className="flex items-center">
-          <h1 className="text-xl font-bold">Maschain Demo</h1>
+          <h1 className="text-xl font-bold">Digital Identity Card</h1>
         </div>
         <button
           onClick={openModal}

@@ -178,7 +178,7 @@ export default function Home() {
                 onClick={clearWalletAddress}
                 className="w-full mt-4 border rounded-md py-2 px-4 hover:bg-black hover:text-white transition-all duration-300"
               >
-                Disconnect Wallet
+                Disconnect DIC
               </button>
               <button
                 onClick={openMintModal}

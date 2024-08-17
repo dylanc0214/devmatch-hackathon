@@ -72,7 +72,7 @@ const CreateWalletModal = ({ onSubmit, onClose }) => {
           </div>
           <div className="mb-4">
             <label htmlFor="walletName" className="block mb-2">
-              Wallet Name
+              DIC Name
             </label>
             <input
               type="text"
