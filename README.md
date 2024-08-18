@@ -1,41 +1,21 @@
-# This is a project template for APUBCC Devmatch 2024 Hackathon
 
-The purpose of this template is to facilitate new developers to quickly get a hands-on approach and start developing using Maschain's API.  
-Test it out [HERE](https://maschainworkshop.vercel.app/)
+# MYS Government Service
 
-This project sets up the basic functions such as:
+MYS Government Service is a website that contains multiple systems to aid the government in certain aspects through Blockchain technology.
 
-1. Creating User Wallet
-2. Minting Token
-3. Transferring Token
+## Key Features
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+- **Digital Identity**: Utilizing the power of blockchain to create digital identities for users
+- **Halal Verification System**: Users can apply for halal certification. 
 
-## Getting Started
+## Contract Address
+0xecaf61C6461C14Dd1104a6C7EfC3de0D211c2093
 
-First, run the development server:
+## Live Website Link
+[MYS Government Service](https://moccasin-brinn-40.tiiny.site/)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Project Aim
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Our primary focus is to provide a user-friendly and aesthetically pleasing UI/UX, addressing a significant gap in the Web3 space and assisting the government in services. We also believe that an intuitive and engaging interface is crucial for the success and adoption of blockchain projects. As we progress, we will continue to do our best to enhance and refine the user experience.
 
-## Obtain Necessary Keys from Maschain
 
-Navigate to https://portal-testnet.maschain.com/ to get the necessary keys.
-
-In the .env.example file, replace the values with your own key, and rename the file to just ".env" or ".env.local"
-
-# Have fun building
-
-```bash
-Contact me or the team if you have any questions
-@OxBenjamintan - AKA LengzaiBen
-```
