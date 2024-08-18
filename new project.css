@@ -1,0 +1,50 @@
+body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-image: url(https://image.slidesdocs.com/responsive-images/background/clean-green-business-motivation-simple-minimalist-powerpoint-background_325bb82420__960_540.jpg);
+    background-repeat: no-repeat;
+    background-size: 1400px;
+    background-attachment: fixed;
+    overflow: auto 20%;
+}
+.word{
+    background-color: aquamarine;
+}
+.photo{
+    margin: 20px;
+    cursor: pointer;
+    display: block;
+    position: relative;
+    left: 20px;
+    top: 40px;
+}
+
+.photo2{
+    margin: 20px;
+    cursor: pointer;
+    display: block;
+    position: relative;
+    left: 325px;
+    bottom: 155px;
+}
+.photo3{
+    margin: 20px;
+    cursor: pointer;
+    display: block;
+    position: relative;
+    left: 630px;
+    bottom: 400px;
+}
+.photo:hover{
+    filter: blur(10px);
+}
+
+.photo2:hover{
+    filter: blur(10px);
+}
+
+.photo3:hover{
+    filter: blur(10px);
+}
+
+
+

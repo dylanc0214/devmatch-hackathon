@@ -1,0 +1,136 @@
+.b1{
+    left: 700px;
+}
+
+
+.title{
+    background-image: url(https://t4.ftcdn.net/jpg/02/10/45/95/240_F_210459536_XmLDEcKq2DpeNLVmheuWeu9NM9aGKnih.jpg) ;
+    background-repeat: no-repeat;
+    background-size: 1500px;
+    padding: 10px;
+    left: 400px;
+}
+
+#tag-menu{
+    display: none;
+}
+
+#tag-menu:checked div.container{
+animation: slide-in 0.5s ease ;
+animation-fill-mode: forwards;
+}
+
+/* Container styling */
+.container {
+        display: flex;
+}
+
+/* Sidebar styling */
+.sidebar {
+    width: 250px;
+    background-color: #333;
+    color: white;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: width 0.3s;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.sidebar.collapsed {
+    width: 80px;
+}
+
+.sidebar .toggle-btn {
+    background-color: #333;
+    color: white;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.sidebar .menu {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar .menu li {
+    margin-bottom: 10px;
+}
+
+.sidebar .menu a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, padding-left 0.3s ease;
+}
+
+.sidebar .menu a:hover {
+    background-color: #575757;
+}
+
+.sidebar.collapsed .menu a {
+    padding-left: 20px;
+}
+
+@keyframes slide-in {
+    from{left: -280px}
+    to{left:0}
+}
+
+@keyframes slide-out{
+    from{left: 0;}
+    to{left:-280px}
+}
+.a1{
+    background-image: url(https://marketplace.canva.com/EAFCytpuJ08/1/0/1600w/canva-green-wateroclor-leaf-linktree-background-0Mp0WYk6_8E.jpg);
+    background-size: 2000px;
+    width: 900px;
+    padding: 100px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+    bottom: 413.5px;
+    left: 235px;
+}
+
+.content{
+    background-color: violet;
+    left: 100px;
+}
+
+.button1{
+    background-color: cornflowerblue;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    padding: 15px;
+    box-shadow: 20px;
+    left: 350px;
+}
+
+.button1:hover{
+    transition: 0.5s;
+    background-color: blue;
+}
+
+.button1:active{
+    transition: 0.5s;
+    background-color: deepskyblue;
+}
+
+.iframe1{
+    margin-left: 350px;
+    position: relative;
+    top: 400px;
+    
+    
+}
+
